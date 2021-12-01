@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "lib": ["esnext", "dom"],
+    "types": [
+      "jest"
+    ],
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "noImplicitThis": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "paths": {
+      "@ui-vue/*": [
+        "./packages/*"
+      ],
+      "@lib2/*": [
+        "./dist/vue2/lib/*",
+      ],
+      "@lib3/*": [
+        "./dist/vue3/lib/*",
+      ],
+      "@docs/*": [
+        "./docs/src/*"
+      ],
+      "*": [
+        "typings/*"
+      ]
+    },
+    "allowJs": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+  ]
+}

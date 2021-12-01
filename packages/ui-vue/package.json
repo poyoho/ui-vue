@@ -1,0 +1,9 @@
+{
+  "name": "@ui-vue/ui-vue",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "dependencies": {
+    "@tanbo/bezier": "^1.0.0"
+  },
+  "peerDependencies": {}
+}

@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev:bootstrap": "cd bootstrap && vite",
+    "dev:vue2": "cd vue2 && vite",
+    "build": "cd bootstrap && vite build"
+  },
+  "dependencies": {
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.6.1",
+    "vite": "^2.6.14",
+    "vite-plugin-md": "^0.11.4",
+    "vite-plugin-vue2": "^1.9.0",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

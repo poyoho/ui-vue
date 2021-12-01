@@ -1,0 +1,31 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": [
+      "vite/client"
+    ],
+    "paths": {
+      "@ui-vue/*": [
+        "../packages/*"
+      ],
+      "@lib2/*": [
+        "../dist/vue2/lib/*",
+      ],
+      "@lib3/*": [
+        "../dist/vue3/lib/*",
+      ],
+      "@sub/*": [
+        "./vue2/*"
+      ]
+    }
+  },
+  "include": [
+    "bootstrap",
+    "vue2",
+    "typings"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

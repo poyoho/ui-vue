@@ -1,0 +1,94 @@
+{
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "lint": "eslint . --fix",
+    "dev": "esno build/dev.ts",
+    "build": "esno build/build.ts",
+    "test2": "cross-env VUE_VERSION=2 jest",
+    "test3": "cross-env VUE_VERSION=3 jest",
+    "test:all": "yarn test2 && yarn test3",
+    "test:watch": "jest --watch"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^3.0.0-0 || ^2.6.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "main": "dist/used/lib/ui-vue/index.js",
+  "types": "dist/used/types/ui-vue/index.d.ts",
+  "files": [
+    "packages",
+    "lib"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [
+    "vue2",
+    "vue3",
+    "components"
+  ],
+  "lint-staged": {
+    "*": "eslint --fix ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@rollup/plugin-alias": "^3.1.8",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-dynamic-import-vars": "^1.4.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^27.0.3",
+    "@types/minimist": "^1.2.2",
+    "@types/sass": "^1.43.1",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "@vue/composition-api": "^1.2.4",
+    "@vue/test-utils": "^1.3.0",
+    "chalk": "^4.1.2",
+    "commitizen": "^4.2.2",
+    "conventional-changelog-cli": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "date-time": "^4.0.0",
+    "defu": "^5.0.0",
+    "esbuild": "^0.12.19",
+    "esbuild-node-loader": "^0.6.3",
+    "eslint": "^7.12.1",
+    "eslint-plugin-vue": "^8.1.1",
+    "execa": "^5.1.1",
+    "fast-glob": "^3.2.7",
+    "fs-extra": "^10.0.0",
+    "gulp": "^4.0.2",
+    "jest": "^27.3.1",
+    "postcss": "^8.3.8",
+    "postcss-scss": "^4.0.2",
+    "rollup": "^2.44.0",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-esbuild": "^4.2.3",
+    "rollup-plugin-filesize": "^9.1.1",
+    "rollup-plugin-image": "^1.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "rollup-plugin-vue2": "npm:rollup-plugin-vue@^5.1.9",
+    "sass": "^1.44.0",
+    "semver": "^7.3.5",
+    "ts-jest": "^27.0.7",
+    "ts-morph": "^13.0.1",
+    "typescript": "^4.1.2",
+    "vue-eslint-parser": "^7.6.0",
+    "vue-template-compiler": "^2.6.14",
+    "vue2": "npm:vue@^2.6.14",
+    "vue3": "npm:vue@^3.2.21"
+  }
+}

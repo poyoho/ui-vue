@@ -1,0 +1,6 @@
+{
+  "name": "@ui-vue/adapter",
+  "private": true,
+  "version": "0.0.0",
+  "types": "vue3.ts"
+}

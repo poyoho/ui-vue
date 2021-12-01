@@ -1,0 +1,47 @@
+import { bold, cyan, dim, red, underline } from 'chalk'
+import { RollupError, SerializedTimings } from 'rollup'
+import { relativeId } from './paths'
+
+// log to stderr to keep `rollup main.js > bundle.js` from breaking
+export const stderr = console.error.bind(console)
+
+export function handleError(err: RollupError, recover = false): void {
+  let description = err.message || err
+  if (err.name) description = `${err.name}: ${description}`
+  const message = (err.plugin ? `(plugin ${err.plugin}) ${description}` : description) || err
+
+  stderr(bold(red(`[!] ${bold(message.toString())}`)))
+
+  if (err.url) {
+    stderr(cyan(err.url))
+  }
+
+  if (err.loc) {
+    stderr(`${relativeId((err.loc.file || err.id)!)} (${err.loc.line}:${err.loc.column})`)
+  } else if (err.id) {
+    stderr(relativeId(err.id))
+  }
+
+  if (err.frame) {
+    stderr(dim(err.frame))
+  }
+
+  if (err.stack) {
+    stderr(dim(err.stack))
+  }
+
+  stderr('')
+
+  if (!recover) process.exit(1)
+}
+
+
+export function timing(timings: SerializedTimings): void {
+  Object.keys(timings).forEach(label => {
+    const appliedColor =
+			label[0] === '#' ? (label[1] !== '#' ? underline : bold) : (text: string) => text
+    const [time, memory, total] = timings[label]
+    const row = `${label}: ${time.toFixed(0)}ms, ${memory} / ${total}`
+    console.info(appliedColor(row))
+  })
+}
